@@ -5,9 +5,9 @@
 //  Created by flexih on 2023/7/29.
 //
 
+#if os(visionOS)
 import UIKit
 
-#if os(visionOS)
 public extension UIApplication {
     var keyWindow: UIWindow? {
         for scene in UIApplication.shared.connectedScenes {
@@ -21,4 +21,5 @@ public extension UIApplication {
         return nil
     }
 }
+
 #endif
