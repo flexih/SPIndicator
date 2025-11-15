@@ -74,7 +74,9 @@ open class SPIndicatorView: UIView {
     
     private lazy var backgroundView: UIVisualEffectView = {
         let view: UIVisualEffectView = {
-            if #available(iOS 13.0, *) {
+            if #available(iOS 26.0, *) {
+                return UIVisualEffectView(effect: UIGlassEffect(style: .clear))
+            } else if #available(iOS 13.0, *) {
                 return UIVisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
             } else {
                 return UIVisualEffectView(effect: UIBlurEffect(style: .light))
